@@ -5,8 +5,6 @@ def linear(lst, n):
         if lst[i]==n:
             return i
     return -1
-# for i in lst:
-#     print(linear(lst, i))
 
 def binary(_lst, _n):
     _starti = 0
@@ -21,5 +19,3 @@ def binary(_lst, _n):
         else:
             return mid_i
     return bin(_lst, _n, _starti, _endi)
-# for i in lst:
-#     print(binary(lst, i))
