@@ -19,3 +19,21 @@ def binary(_lst, _n):
         else:
             return mid_i
     return bin(_lst, _n, _starti, _endi)
+
+def ternary(lst, n):
+    firsti=0
+    lasti=len(lst)-1
+    def tern(lst, n, a,b):
+        indpoint1=a+(b-a)//3
+        indpoint2=b-(b-a)//3
+        if b-a<3:
+            if n==lst[a]:return a
+            elif n==lst[b]:return b
+            else: return -1
+        if n<=lst[indpoint1]:
+            return tern(lst, n, a, indpoint1)
+        elif n>=lst[indpoint2]:
+            return tern(lst, n, indpoint2, b)
+        else:
+            return tern(lst, n, indpoint1+1, indpoint2-1)
+    return tern(lst, n, firsti, lasti)
