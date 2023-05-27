@@ -1,3 +1,5 @@
+# linear, binary, ternary search algorithms
+
 lst=[2,5,8,12,16,23,38,56,72,91]
 
 def linear(lst, n):
