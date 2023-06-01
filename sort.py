@@ -1,3 +1,4 @@
+#merge, selection, bubble
 def merge(d):
     n=len(d)
     if n==1:
@@ -23,7 +24,32 @@ def merge(d):
                 p+=1
         return c
     
+def selection(arr):
+    n=len(arr)
+    for k in range(n):
+        ind=k
+        for i in range(ind +1, n):
+            if arr[i]<arr[ind]:
+                ind=i
+        arr[k],arr[ind]=arr[ind], arr[k]
+    return arr
 
-arr=[1,3,2,5,6,6,4,20,5]
+def bubble(arr):
+    n=len(arr)
+    for _ in range(n):
+        for i in range(n-1):
+            if(arr[i]>arr[i+1]):
+                arr[i],arr[i+1]=arr[i+1],arr[i]
+    return arr
+
+
+
+
+
+
+
+arr=[2,3,2,5,1,6,4,20,5]
 print(merge(arr))
+print(selection(arr))
+print(bubble(arr))
 
