@@ -34,5 +34,19 @@ print(str_sum(*range(5000000)))
 
 ###################
 
-# def Authorization(func):
-#     def inner()
+def Authorization(func) -> None:
+    '''Enter password to continue'''
+    pas='111'
+    def inner(*args, **kwargs):
+        while True:
+            answer=input("Enter password: ")
+            if answer != pas: continue
+            return func(*args, **kwargs)
+    return inner
+
+#Example
+@Authorization
+def str_sum(*nums):
+    return str(sum(nums))
+print(str_sum(1,2,3))
+
